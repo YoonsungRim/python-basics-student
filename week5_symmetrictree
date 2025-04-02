@@ -1,0 +1,16 @@
+class TreeNode:
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        if root.left==root.right:
+            worker=root
+            worker=worker.left
+
+            another=root
+            another=another.right
+            if worker.left==another.right:
+                if worker.right==another.left:
+                    return True
